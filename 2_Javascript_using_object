@@ -1,0 +1,71 @@
+💬 Question No-1 :
+Create a resume object in JavaScript that includes personal details, education, experience, skills, and hobbies. Add a function inside the object to display this information using console.log(). Then call that function.
+
+✅ script:
+
+const resume = { 
+  personalInfo: {
+    name: "Name",
+    email: "Ashika.@example.com",
+    phone: "123-456-7890",
+    address: {
+      street: "123 Main St",
+      city: "Perambalur",
+      state: "Tamil Nadu",
+      zip: "621109"
+    }
+  },
+  education: {
+    school: {
+      name: "Anna University",
+      degree: "B.Tech in Computer Science",
+      year: 2023
+    },
+    additionalCertifications: {
+      course1: {
+        title: "Web Development",
+        platform: "Coursera",
+        year: 2022
+      },
+      course2: {
+        title: "AWS Cloud Practitioner",
+        platform: "Udemy",
+        year: 2023
+      }
+    }
+  },
+  experience: {
+    job1: {
+      company: "Zoho Tech",
+      role: "Frontend Developer",
+      duration: "Jan 2023 - Present",
+      details: {
+        project: "E-commerce Website",
+        techStack: ["HTML", "CSS", "JavaScript", "React"]
+      }
+    }
+  },
+  skills: {
+    programmingLanguages: ["JavaScript", "Python", "Java"],
+    tools: {
+      frontend: ["React", "Tailwind CSS"],
+      backend: ["Node.js", "Express"],
+      database: ["MongoDB", "MySQL"]
+    }
+  },
+  hobbies: ["Reading", "Coding", "Gaming"],
+
+  displayResume: function() {
+    console.log("----- Resume Summary -----");
+    console.log("👤 Name:", this.personalInfo.name);
+    console.log("📧 Email:", this.personalInfo.email);
+    console.log("📞 Phone:", this.personalInfo.phone);
+    console.log("🎓 Education:", this.education.school.degree, "from", this.education.school.name);
+    console.log("💼 Experience:", this.experience.job1.role, "at", this.experience.job1.company);
+    console.log("🛠️ Skills:", this.skills.programmingLanguages.join(", "));
+    console.log("🎯 Hobbies:", this.hobbies.join(", "));
+    console.log("--------------------------");
+  }
+};
+
+resume.displayResume();
