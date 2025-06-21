@@ -1,0 +1,164 @@
+Question:
+How does the above HTML, CSS, and JavaScript code create a styled registration form that collects user details and logs them to 
+the browser console after validating matching passwords?
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stylish Registration Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 350px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Registration Form</h2>
+  <form id="registrationForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" required>
+      <option value="">--Select--</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" required>
+
+    <label for="country">Country:</label>
+    <select id="country" required>
+      <option value="">--Select--</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+      <option value="UK">China</option>
+      <option value="UK">Nepal</option>
+      <option value="Canada">Canada</option>
+    </select>
+
+    <label for="state">State:</label>
+    <select id="state" required>
+      <option value="">--Select--</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="California">California</option>
+      <option value="New York">New York</option>
+      <option value="Ontario">Ontario</option>
+    </select>
+
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+
+    <label for="repassword">Re-enter Password:</label>
+    <input type="password" id="repassword" required>
+
+    <div class="error" id="passwordError"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('registrationForm');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const gender = document.getElementById('gender').value;
+    const dob = document.getElementById('dob').value;
+    const country = document.getElementById('country').value;
+    const state = document.getElementById('state').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const repassword = document.getElementById('repassword').value;
+
+    const error = document.getElementById('passwordError');
+
+    if (password !== repassword) {
+      error.textContent = "Passwords do not match!";
+      return;
+    } else {
+      error.textContent = "";
+    }
+
+    console.log("Registration Details:");
+    console.log("Name:", name);
+    console.log("Gender:", gender);
+    console.log("Date of Birth:", dob);
+    console.log("Country:", country);
+    console.log("State:", state);
+    console.log("Email:", email);
+    console.log("Password:", password);
+  });
+</script>
+
+</body>
+</html>
