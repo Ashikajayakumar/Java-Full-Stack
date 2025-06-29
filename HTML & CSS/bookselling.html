@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookNest - Your Reading Haven</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fdf6ec;
+      color: #3e2723;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #5d4037;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-family: 'Palatino Linotype', serif;
+      font-size: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc80;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .hero * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background: #ff9800;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      width: 250px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .genres {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .genres span {
+      background: #ffcc80;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .subscribe input {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .subscribe button {
+      padding: 10px 20px;
+      background: #ffa000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    footer {
+      background: #4e342e;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ffcc80;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    footer p {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>BookNest</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#books">Books</a>
+      <a href="#authors">Authors</a>
+      <a href="#genres">Genres</a>
+      <a href="#blog">Blog</a>
+      <a href="#login">Login</a>
+      <a href="#signup">Sign Up</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Welcome to BookNest</h2>
+    <p>Your favorite destination for books of all kinds</p>
+    <button>Browse Collection</button>
+  </section>
+
+  <section id="books">
+    <h2>📚 Bestsellers</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c" alt="Book 1">
+        <h3>Atomic Habits</h3>
+        <p>by James Clear<br><strong>$18</strong></p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Book 2">
+        <h3>The Alchemist</h3>
+        <p>by Paulo Coelho<br><strong>$14</strong></p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Book 3">
+        <h3>Ikigai</h3>
+        <p>by Héctor García<br><strong>$12</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="authors">
+    <h2>🖋️ Featured Authors</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>J.K. Rowling</h3>
+        <p>Author of Harry Potter series</p>
+      </div>
+      <div class="card">
+        <h3>George R.R. Martin</h3>
+        <p>Author of A Song of Ice and Fire</p>
+      </div>
+      <div class="card">
+        <h3>Agatha Christie</h3>
+        <p>Queen of Mystery Novels</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="genres">
+    <h2>📖 Popular Genres</h2>
+    <div class="genres">
+      <span>Fiction</span>
+      <span>Self-Help</span>
+      <span>Romance</span>
+      <span>Fantasy</span>
+      <span>Thriller</span>
+      <span>Biography</span>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2>📝 From the Blog</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Top 10 Books of 2025</h3>
+        <p>Discover the most recommended reads of the year.</p>
+      </div>
+      <div class="card">
+        <h3>Benefits of Daily Reading</h3>
+        <p>Improve your focus, knowledge, and creativity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup" class="subscribe">
+    <h2>📬 Subscribe for Updates</h2>
+    <p>Get weekly updates on new arrivals, discounts, and articles.</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <div>
+      <a href="#home">Home</a> |
+      <a href="#books">Books</a> |
+      <a href="#authors">Authors</a> |
+      <a href="#genres">Genres</a> |
+      <a href="#blog">Blog</a> |
+      <a href="#login">Login</a> |
+      <a href="#signup">Sign Up</a>
+    </div>
+    <p>&copy; 2025 BookNest. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
